@@ -27,7 +27,7 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function login(Request $request){
+    public function signin(Request $request){
 
         $request->validate([
             'email' => 'required|string|email',
