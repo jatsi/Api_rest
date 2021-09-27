@@ -53,14 +53,14 @@ class AuthController extends Controller
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at
             )->toDateTimeString()
-        ],401);
+        ],201);
     }
 
     public function logout(Request $request){
         $request->user()->token()->revoke();
         return response()->json([
             'status' => 'ok'
-        ]);
+        ],201);
     }
 
     public function user(Request $request){
